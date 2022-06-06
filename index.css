@@ -1,0 +1,162 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: grid;
+    place-content: center;
+    height: 100vh;
+}
+
+.container {
+    background-color: rgb(60, 60, 60);
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    place-content: center;
+}
+
+.container .gearbox {
+    border: 1.5px solid rgba(179, 176, 176, 0.757);
+    height: 190px;
+    width: 240px;
+    border-radius: 5%;
+    background-color: rgb(0, 0, 0);
+    overflow: hidden;
+    position: relative;
+    z-index: 20;
+    box-shadow: 0 0 20px 2px rgb(0, 0, 0);
+}
+
+.gear {
+    height: 72px;
+    width: 72px;
+    position: relative;
+    border-radius: 50%;
+    background-color: rgb(198, 192, 192);
+    display: grid;
+    place-items: center;
+    border: 1px solid rgba(186, 186, 186, 0.305);
+}
+
+.title {
+    color: rgb(182, 182, 182);
+    text-align: center;
+    margin-top: 20px;
+    font-weight: bold;
+    text-shadow: 0 0 20px 10px rgb(26, 26, 26);
+}
+
+.gearbox .one {
+    left: 13px;
+    top: 15px;
+    transform: rotate(0deg);
+    animation: clock-wise 4s linear infinite;
+}
+
+.gearbox .two {
+    left: 74px;
+    transform: rotate(0deg);
+    animation: anti-clock-wise 4s linear infinite;
+}
+
+.gearbox .three {
+    left: 15px;
+    top: -14px;
+    transform: rotate(0deg);
+    animation: clock-wise 4s linear infinite;
+}
+
+.gearbox .four {
+    left: 160px;
+    top: -178px;
+    height: 140px;
+    width: 140px;
+    transform: rotate(0deg);
+    animation: large-wise 8s linear infinite;
+}
+
+.gear-inner {
+    height: 60%;
+    width: 60%;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+}
+
+.large .gear-inner {
+    height: 80%;
+    width: 80%;
+}
+
+.bar {
+    position: absolute;
+    height: 90px;
+    width: 17px;
+    background-color: rgb(198,192, 192);
+    border-radius: 5%;
+}
+
+.inner-circle {
+    background-color: black;
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    z-index: 10;
+    border: 1px solid rgb(123, 120, 120);
+}
+
+.bar:nth-child(2) {
+    transform: rotate(60deg);
+}
+
+.bar:nth-child(3) {
+    transform: rotate(120deg);
+}
+
+.large-bar {
+    position: absolute;
+    height: 160px;
+    width: 17px;
+    background-color: rgb(198, 192, 192);
+}
+
+.large-bar:nth-child(2) {
+    transform: rotate(30deg);
+}
+
+.large-bar:nth-child(3) {
+    transform: rotate(60deg);
+}
+
+.large-bar:nth-child(4) {
+    transform: rotate(90deg);
+}
+
+.large-bar:nth-child(5) {
+    transform: rotate(120deg);
+}
+
+.large-bar:nth-child(6) {
+    transform: rotate(150deg);
+}
+
+@keyframes clock-wise {
+    100% {
+        transform: rotateZ(-360deg);
+    }
+}
+
+@keyframes anti-clock-wise {
+    100% {
+        transform: rotateZ(360deg);
+    }
+}
+
+@keyframes large-wise {
+    100% {
+        transform: rotateZ(-360deg);
+    }
+}
